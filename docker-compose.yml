@@ -1,0 +1,20 @@
+version: '1.0'
+
+services:
+    readercontainer:
+              image: rahulawari683/reader-dockerhub-repo:latest
+              container_name: readercontainer
+              ports:
+                - "8080:80"
+              volumes:
+                - shared_data:/shared
+    reversecontainer:
+               image: rahulawari683/reverse-dockerhub-repo:latest
+               container_name: reversecontainer
+               ports:
+                  - "9000:80"
+               volumes:
+                  - shared_data:/shared
+
+volumes:
+  shared_data:
