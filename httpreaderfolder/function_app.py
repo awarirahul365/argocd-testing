@@ -10,7 +10,7 @@ def HttpTriggerReader(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     json_string_reader=req.params.get('json')
-    #Received as string format
+    #Received as string format from url 
     logging.info({json_string_reader})
     if not json_string_reader:
         return func.HttpResponse(
@@ -19,7 +19,7 @@ def HttpTriggerReader(req: func.HttpRequest) -> func.HttpResponse:
         )
     
     try:
-        # converted to json format
+        # convert to json format
         req_body=json.loads(json_string_reader)
     except:
         return func.HttpResponse(
@@ -27,11 +27,12 @@ def HttpTriggerReader(req: func.HttpRequest) -> func.HttpResponse:
             status_code=400
         )
     logging.info(f"JSON Body: {req_body}")
-    headers = {"Content-Type": "application/json"}
     response_json = json.dumps(req_body, indent=4)
     #res=requests.post("https://httpfunctionreverse.azurewebsites.net/api/HttpTriggerReverse?",data=response_json,headers=headers)
     #res=requests.post("http://localhost:9000/api/HttpTriggerReverse",data=response_json,headers=headers)
     #logging.info({res.status_code})
+
+    #Write json data to local volume
     with open('/shared/output.json', 'w') as f:
         json.dump(response_json, f)
     return func.HttpResponse(response_json, mimetype="application/json")

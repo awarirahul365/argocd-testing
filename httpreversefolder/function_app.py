@@ -11,9 +11,10 @@ def HttpTriggerReverse(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     try:
-        # Read the data from the request
+        # Specify path of volume local
         file_path = '/shared/output.json'
         #data = req.get_json()
+        # Load File 
         with open(file_path, 'r') as f:
             data = json.load(f)
         # Reverse the 'message' field in each dictionary
@@ -22,6 +23,7 @@ def HttpTriggerReverse(req: func.HttpRequest) -> func.HttpResponse:
         print(type(newdata))
         for elem in newdata:
             elem['message']=elem['message'][::-1]
+        # Convert from list of dict to json format
         json_data=json.dumps(newdata,indent=4)
         return func.HttpResponse(
             json_data,
