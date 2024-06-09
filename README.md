@@ -35,11 +35,11 @@ This task is still in development phase , Please do not review it.
      
   4. Deploy YAML files to Minikube cluster
      ```bash
-    kubectl apply -f readercontainer-deployment.yaml,
-    kubectl apply -f readercontainer-service.yaml,
-    kubectl apply -f reversecontainer-deployment.yaml,
-    kubectl apply -f reversecontainer-service.yaml,
-    kubectl apply -f shared-data-persistentvolumeclaim.yaml
+     kubectl apply -f readercontainer-deployment.yaml,
+     kubectl apply -f readercontainer-service.yaml,
+     kubectl apply -f reversecontainer-deployment.yaml,
+     kubectl apply -f reversecontainer-service.yaml,
+     kubectl apply -f shared-data-persistentvolumeclaim.yaml
      ```
 
   5. Verify the Deployments,pods and service
