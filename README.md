@@ -31,22 +31,22 @@ This task is still in development phase , Please do not review it.
      ```bash
      minikube start
      ```
-  4. Deploy YAML files to minikube cluster
-    ```bash
+  6. Deploy YAML files to Minikube cluster
+     ```bash
     kubectl apply -f readercontainer-deployment.yaml,
     kubectl apply -f readercontainer-service.yaml,
     kubectl apply -f reversecontainer-deployment.yaml,
     kubectl apply -f reversecontainer-service.yaml,
     kubectl apply -f shared-data-persistentvolumeclaim.yaml
-    ```
+     ```
 
-  5. Verify the Deployments,pods and service
+  6. Verify the Deployments,pods and service
      ```bash
      kubectl get deployments
      kubectl get pods
      kubectl get services
      ```
-  6. Start Services
+  7. Start Services
      ```bash
      minikube service readercontainer
      minikube service reversecontainer
