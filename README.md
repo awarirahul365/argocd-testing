@@ -101,4 +101,9 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
 
    7. ChatGpt
       * [Chapgpt](https://chat.openai.com/)
+     
+  ## Scope of Improvement
+
+   1. Add multiple replicas and RollingUpdate feature to make it more scaleable and reduce downtime.
+   2. Currently the read and write operation to volume does not updates automatically , user needs to refresh to observe changes .
  
