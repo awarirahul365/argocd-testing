@@ -20,7 +20,7 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
 
   1. Clone the repository
      ``` bash
-     https://github.com/signavio-hiring/coding-challenge-rahul-awari.git
+     git clone -b approach-volume https://github.com/signavio-hiring/coding-challenge-rahul-awari.git
      ```
   2. Clone the repository
      ``` bash
