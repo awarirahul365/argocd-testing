@@ -8,9 +8,9 @@ metadata:
     io.kompose.service: readercontainer
   name: readercontainer
 spec:
-  ports:
+  ports: # cluster ip type 
     - name: "8080"
-      port: 8080
-      targetPort: 80
+      port: 8080  #service port
+      targetPort: 80 #backend port
   selector:
     io.kompose.service: readercontainer
