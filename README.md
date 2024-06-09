@@ -17,6 +17,7 @@ This task is still in development phase , Please do not review it.
      ``` bash
      https://github.com/signavio-hiring/coding-challenge-rahul-awari.git
      ```
+     
   2. To test in Docker Engine and local host , Ensure Docker Engine is running in background
      ```bash
      docker compose up --build -d
@@ -31,7 +32,8 @@ This task is still in development phase , Please do not review it.
      ```bash
      minikube start
      ```
-  6. Deploy YAML files to Minikube cluster
+     
+  4. Deploy YAML files to Minikube cluster
      ```bash
     kubectl apply -f readercontainer-deployment.yaml,
     kubectl apply -f readercontainer-service.yaml,
@@ -40,13 +42,13 @@ This task is still in development phase , Please do not review it.
     kubectl apply -f shared-data-persistentvolumeclaim.yaml
      ```
 
-  6. Verify the Deployments,pods and service
+  5. Verify the Deployments,pods and service
      ```bash
      kubectl get deployments
      kubectl get pods
      kubectl get services
      ```
-  7. Start Services
+  6. Start Services
      ```bash
      minikube service readercontainer
      minikube service reversecontainer
