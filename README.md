@@ -24,7 +24,7 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
      ```
   2. Clone the repository
      ``` bash
-     cd coding-challenge-rahul-awari/ 
+     cd .\coding-challenge-rahul-awari\
      ```
      
   3. To test in Docker Engine and local host , Ensure Docker Engine is running in background
@@ -109,5 +109,7 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
   ## Scope of Improvement
 
    1. Add multiple replicas and RollingUpdate feature to make it more scaleable and reduce downtime.
-   2. Currently the read and write operation to volume does not updates automatically , user needs to refresh to observe changes .
+   2. Currently the read and write operation to volume does not updates automatically , user needs to refresh to observe changes.
+   3. Delay observed when automated through script as hyperlink might be active but resources might not be allotted.
+   4. Old Data stored in volume.
  
