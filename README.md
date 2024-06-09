@@ -22,8 +22,12 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
      ``` bash
      https://github.com/signavio-hiring/coding-challenge-rahul-awari.git
      ```
+  2. Clone the repository
+     ``` bash
+     cd coding-challenge-rahul-awari/ 
+     ```
      
-  2. To test in Docker Engine and local host , Ensure Docker Engine is running in background
+  3. To test in Docker Engine and local host , Ensure Docker Engine is running in background
      ```bash
      docker compose up --build -d
      ```
@@ -33,12 +37,12 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
 
     ** Please Note Input can be dynamically rendered by changing the array json in localhost:8080 and refreshing results in localhost:9000**
 
-  3. Start Minikube
+  4. Start Minikube
      ```bash
      minikube start
      ```
      
-  4. Deploy YAML files to Minikube cluster
+  5. Deploy YAML files to Minikube cluster
      ```bash
      kubectl apply -f readercontainer-deployment.yaml,
      kubectl apply -f readercontainer-service.yaml,
@@ -47,13 +51,13 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
      kubectl apply -f shared-data-persistentvolumeclaim.yaml
      ```
 
-  5. Verify the Deployments,pods and service
+  6. Verify the Deployments,pods and service
      ```bash
      kubectl get deployments
      kubectl get pods
      kubectl get services
      ```
-  6. Start Services
+  7. Start Services
      ```bash
      minikube service readercontainer
      minikube service reversecontainer
