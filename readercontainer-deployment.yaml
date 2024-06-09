@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: #labels and metadata added
+metadata:
   annotations:
     kompose.cmd: "kompose convert"
     kompose.version: 1.34.0 (cbf2835db)
@@ -9,7 +9,7 @@ metadata: #labels and metadata added
   name: readercontainer
 spec:
   replicas: 1
-  selector:  #identified to service through common identifier selector
+  selector:
     matchLabels:
       io.kompose.service: readercontainer
   strategy:
@@ -22,24 +22,17 @@ spec:
       labels:
         io.kompose.service: readercontainer
     spec:
-      containers: # container specification added
+      containers:
         - image: rahulawari683/reader-dockerhub-repo:latest 
           name: readercontainer
           ports:
             - containerPort: 80
               protocol: TCP
           volumeMounts:
-            - mountPath: /shared  #mounted path which is present in root directory
+            - mountPath: /shared
               name: shared-data
-          resources:  #resources allotted
-            requests:
-              cpu: 1m  
-              memory: 50Mi
-            limits:
-              cpu: 75m
-              memory: 128Mi
       restartPolicy: Always
       volumes:
-        - name: shared-data  # volume defined
+        - name: shared-data
           persistentVolumeClaim:
             claimName: shared-data
