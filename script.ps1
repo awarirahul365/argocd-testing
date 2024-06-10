@@ -12,7 +12,7 @@ try {
     Write-Output "Docker Engine is not running.Run docker engine in background and ensure its installed"
     exit 1
 }
-
+# For Testing locally in Docker Engine/Desktop
 if(Test-Path ./docker-compose.yml){
     Write-Output "Docker-compose file present"
     Write-Output "Building and starting service"
@@ -28,7 +28,7 @@ if(Test-Path ./docker-compose.yml){
 else{
     Write-Output "Docker-compose file not present"
 }
-
+# For deployment to Kuberenetes cluster
 $minikubeinstalled=Get-Command minikube -ErrorAction SilentlyContinue
 if($minikubeinstalled){
     Write-Output "Minikube is installed"
