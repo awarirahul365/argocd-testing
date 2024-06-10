@@ -116,4 +116,12 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
    3. Delay observed when automated through script as hyperlink might be active but resources might not be allotted.
    4. Old Data stored in volume.
    5. Can be deployed to Hyperscaler and Persistent volume claim such as NFS , aur any Hyperscaler service could be used.
+
+ ## Learning Outcome
+
+   1. Kubernetes - Deployments , Volume , PVC , minikube
+   2. Model V2 of azure function app and azure container apps
+   3. Cluster IP , Service in manifest file
+   4. kompose tool
+   5. Powershell Automation
  
