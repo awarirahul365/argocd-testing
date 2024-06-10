@@ -74,9 +74,10 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
    ```powershell
    .\script.ps1
    ```
-   * After Executing the script 2 services are started as there is a delay please refresh , once the function is running 
-     readercontainer - http://<service IP>/api/HttpTriggerReader?json=[{%22id%22:%221%22,%22message%22:%22SAP%20SIGNAVIO%22}]
-     reversecontainer - http://<service IP>/api/HttpTriggerReverse
+   After Executing the script 2 services are started as there is a delay please refresh , once the function is running 
+   
+     readercontainer -  ** http://<service IP>/api/HttpTriggerReader?json=[{%22id%22:%221%22,%22message%22:%22SAP%20SIGNAVIO%22}] **
+     reversecontainer - ** http://<service IP>/api/HttpTriggerReverse **
   ## Reference 
 
    1. Creation of Http Trigger function and dockerizing them.
