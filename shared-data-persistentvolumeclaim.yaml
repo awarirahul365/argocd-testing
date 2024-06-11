@@ -4,7 +4,7 @@ metadata:
   labels:
     io.kompose.service: shared-data
   name: shared-data
-  namespace: default
+  namespace: argocdtestingcontainer
 spec:
   accessModes:
     - ReadWriteOnce

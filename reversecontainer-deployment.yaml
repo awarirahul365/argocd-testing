@@ -7,7 +7,7 @@ metadata:
   labels:
     io.kompose.service: reversecontainer
   name: reversecontainer
-  namespace: default
+  namespace: argocdtestingcontainer
 spec:
   replicas: 1
   selector:

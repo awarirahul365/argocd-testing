@@ -7,7 +7,7 @@ metadata: #labels and metadata added
   labels:
     io.kompose.service: readercontainer
   name: readercontainer
-  namespace: default
+  namespace: argocdtestingcontainer
 spec:
   replicas: 1
   selector:  #identified to service through common identifier selector
