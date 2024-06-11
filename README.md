@@ -115,7 +115,7 @@ https://github.com/signavio-hiring/coding-challenge-rahul-awari/assets/47710382/
    2. Currently the read and write operation to volume does not updates automatically , user needs to refresh to observe changes.
    3. Delay observed when automated through script as hyperlink might be active but resources might not be allotted.
    4. Old Data stored in volume.
-   5. Can be deployed to Hyperscaler and Persistent volume claim such as NFS , aur any Hyperscaler service could be used.
+   5. Can be deployed to Hyperscaler and Persistent volume claim such as NFS , aur any Hyperscaler service could be used. By defining storage class.
 
  ## Learning Outcome
 
