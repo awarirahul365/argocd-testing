@@ -54,7 +54,7 @@ jobs:
               with:
                 images: docker.io/rahulawaritestdocker/pushrepotest
             
-            - name: Build and push Docker image
+            - name: Build and push Docker image httpreaderfolder
               id: push
               uses: docker/build-push-action@v2
               with:
@@ -63,6 +63,22 @@ jobs:
                 tags: ${{steps.meta.outputs.tags}}
                 labels: ${{steps.meta.outputs.labels}}
                 
+            - name: Extract metadata (tags, labels) for Docker
+              id: metanew
+              uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+              with:
+                images: docker.io/rahulawaritestdocker/pushtesthttpreverse
+            
+            - name: Build and push Docker image httpreaderfolder
+              id: pushnew
+              uses: docker/build-push-action@v2
+              with:
+                context: ./httpreversefolder
+                push: true
+                tags: ${{steps.metanew.outputs.tags}}
+                labels: ${{steps.metanew.outputs.labels}}
+            
+
 
 
             
