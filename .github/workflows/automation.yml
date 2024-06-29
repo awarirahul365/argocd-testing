@@ -1,0 +1,77 @@
+name: 'Build and Deploy docker container'
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    buildimage:
+        runs-on: ubuntu-latest
+        defaults:
+             run:
+                shell: bash
+        steps:
+          - name: Checkout Repository
+            uses: actions/checkout@v2
+        
+          - name: Build httpreaderfile DockerFile
+            run: |
+                cd httpreaderfolder
+                docker image build -t httpreaderactions .
+                docker images
+        
+          - name: Build httpreversefile Dockerfile
+            run: |
+               cd httpreversefolder
+               docker image build -t httpreverseactions .
+               docker images 
+
+    deployimage:
+        runs-on: ubuntu-latest
+        permissions:
+            packages: write
+            contents: read
+            attestations: write
+            id-token: write
+        env:
+            DOCKER_USERNAME: rahul.awari.work@gmail.com
+            DOCKER_PASSWORD: Ganesh123!
+        
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+            
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v2
+            
+            - name: Log in to Docker Hub
+              uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+              with:
+                username: ${{env.DOCKER_USERNAME}}
+                password: ${{env.DOCKER_PASSWORD}}
+
+            - name: Extract metadata (tags, labels) for Docker
+              id: meta
+              uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+              with:
+                images: docker.io/rahulawaritestdocker/pushrepotest
+            
+            - name: Build and push Docker image
+              id: push
+              uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+              with:
+                context: ./httpreaderfolder
+                file: Dockerfile
+                push: true
+                tags: ${{steps.meta.outputs.tags}}
+                labels: ${{steps.meta.outputs.labels}}
+                
+
+
+            
+
+    
+            
+           
+        
