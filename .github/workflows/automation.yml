@@ -34,9 +34,6 @@ jobs:
             contents: read
             attestations: write
             id-token: write
-        env:
-            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         
         steps:
             - name: Checkout Repo
@@ -48,8 +45,8 @@ jobs:
             - name: Log in to Docker Hub
               uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
               with:
-                username: ${{env.DOCKER_USERNAME}}
-                password: ${{env.DOCKER_PASSWORD}}
+                username: ${{secrets.DOCKER_USERNAME}}
+                password: ${{secrets.DOCKER_PASSWORD}}
 
             - name: Extract metadata (tags, labels) for Docker
               id: meta
